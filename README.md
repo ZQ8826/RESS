@@ -1,92 +1,75 @@
-# 个人github项目
+## 一、规范简介
 
-##备注：
-好的书籍三个特点，和书法审美很像：结构、笔法、章法
-●结构：目录具有结构性，逻辑关系
-●排他：每个目录内容和其他有互斥关系，不能重复
-●聚焦：正个结构聚焦在一个方向上
+最近较为清闲，看ARM精简指令集设计特点时，遂萌生维护一套精简ERP设计规范的想法，涵盖销售、采购、库存、生产/服务、财务等核心模块，略参考SAP边界定义，其特点如下：
 
-两个项目
-BPM Defined ERP设计指南1.0版本
-AI Defined ERP 设计指南1.0版本
+1，基于BPM：以业务流程管理为核心，遵循BPMN2.0规范
+2，融合AI：提供引入 AI 的适用范围和量化标准参考
+3，业财一致性：业务与财务数据实时且一致性设计
 
-各大交易所对上市公司ERP采购、销售、应收、应付单有啥明确且具体的要求？
+本规范主要面向产品经理，从 “主数据、流程、表单、控制/规则、报表” 五个维度定义不同业务系统，提供Excel、原型、PRD等源文件。你可以根据业务的个性化微调，导入多维表格、低代码平台、亦或自研系统使用。
 
-内容规范
-每个主数据对象和业务单据对象都给一个最小可行性（看齐SaaS）和pro版本（看齐sap）示例
+总之，规范无法解决所有问题，但能有效降低你的试错成本。
 
+## 二、规范内容
 
-BD_ERP
-https://docs.qq.com/sheet/DRWt0Z0FnSXN4WXJ6?no_promotion=1&tab=BB08J2
+### 1，销售：
 
-目录结构
-一、纵向：
-主数据：整个行业解决方案，面向政府、学校、企业机构
-流程
-规则
-报表
-表单
-对象
+包括主数据、业务流程（营销、商机、订单、售后）、报表，每个业务流程提供表单、流程（基于BPMN2.0标识规范）、规则（基于DMN1.1规范）、报表规范示例
 
+### 2，采购：
 
-二、横向：
-销售，CRM
-库存，WMS
-生产，PP
-质量
-项目
-MES
-采购，SRM
-财务，FICO
-EHR
+包括主数据、业务流程（供应商准入、采购申请、采购订单、付款申请、供应商关系管理）、报表，每个业务流程提供表单、流程（基于BPMN2.0标识规范）、规则（基于DMN1.1规范）、报表规范示例
 
+### 3，库存：
 
-一、开源背景
-解决两类需求
-●自研ERP，取代SAP/Oracle融合云
-●自研ERP
+包括主数据、业务流程（入库、出库、调拨、盘点、分拣、差异处理）、报表，每个业务流程提供表单、流程（基于BPMN2.0标识规范）、规则（基于DMN1.1规范）、报表规范示例
 
-两种方案
-●基于BPM驱动设计
-●基于AI驱动设计
+### 4，生产：
 
-二、设计规范
+包括主数据、业务流程（需求计划、生产/服务计划、人力/物料需求计划、生产/服务执行、生产/服务结算）、报表，每个业务流程提供表单、流程（基于BPMN2.0标识规范）、规则（基于DMN1.1规范）、报表规范示例，
 
+### 5，财务：
 
-## 一、基本知识
+包括主数据、业务流程（应收、应付、内部订单、资产管理、资金管理）、报表，每个业务流程提供表单、流程（基于BPMN2.0标识规范）、规则（基于DMN1.1规范）、报表规范示例
 
-1. 本书中所有的向量都是列向量的形式：
-    
-    ![一、基本知识 - 图1](https://static.sitestack.cn/projects/huaxiaozhuan-ai/239aaefa581740e66c088fe9d407fff4.svg)
-    
-    本书中所有的矩阵 ![一、基本知识 - 图2](https://static.sitestack.cn/projects/huaxiaozhuan-ai/85d0de7405b0093400a5046e64579b3a.svg) 都表示为：
-    
-    ![一、基本知识 - 图3](https://static.sitestack.cn/projects/huaxiaozhuan-ai/3656d7851918e6722c30500769f9fb14.svg)
-    
-    简写为：![一、基本知识 - 图4](https://static.sitestack.cn/projects/huaxiaozhuan-ai/70ffbcb4455d9cb8dbb0903ed9f4d232.svg) 或者 ![一、基本知识 - 图5](https://static.sitestack.cn/projects/huaxiaozhuan-ai/bbc4222e3182e63bec325f108a5e08b7.svg) 。
-    
-2. 矩阵的`F`范数：设矩阵 ![一、基本知识 - 图6](https://static.sitestack.cn/projects/huaxiaozhuan-ai/4c819e57bcb79bd9872d4c58aee2fa06.svg)，则其`F` 范数为：![一、基本知识 - 图7](https://static.sitestack.cn/projects/huaxiaozhuan-ai/26504d626733de561f7f7b5669665b59.svg) 。
-    
-    它是向量的 ![一、基本知识 - 图8](https://static.sitestack.cn/projects/huaxiaozhuan-ai/63304f0ad202562f9162391f8d2092a9.svg) 范数的推广。
-    
-3. 矩阵的迹：设矩阵 ![一、基本知识 - 图9](https://static.sitestack.cn/projects/huaxiaozhuan-ai/4c819e57bcb79bd9872d4c58aee2fa06.svg)，则![一、基本知识 - 图10](https://static.sitestack.cn/projects/huaxiaozhuan-ai/7c8823b6d64cb217d9d2bef587a76262.svg)的迹为： ![一、基本知识 - 图11](https://static.sitestack.cn/projects/huaxiaozhuan-ai/311b7d05485736e43897812eddf3c7f5.svg)。
-    
-    迹的性质有：
-    
-    - ![一、基本知识 - 图12](https://static.sitestack.cn/projects/huaxiaozhuan-ai/1b1039ab2b6412f97f6771f5f4efef88.svg) 的`F` 范数等于![一、基本知识 - 图13](https://static.sitestack.cn/projects/huaxiaozhuan-ai/70a0fe40f6aa3cab4fa8a56b8b03346a.svg) 的迹的平方根：![一、基本知识 - 图14](https://static.sitestack.cn/projects/huaxiaozhuan-ai/4130deebdbc7238f90f6923552befa63.svg) 。
-    - ![一、基本知识 - 图15](https://static.sitestack.cn/projects/huaxiaozhuan-ai/1b1039ab2b6412f97f6771f5f4efef88.svg) 的迹等于![一、基本知识 - 图16](https://static.sitestack.cn/projects/huaxiaozhuan-ai/c20e3a1b073be9b5ed4c530f2be5ad15.svg) 的迹：![一、基本知识 - 图17](https://static.sitestack.cn/projects/huaxiaozhuan-ai/dd6e85f139a5037241ae5a5fe7b6660c.svg) 。
-    - 交换律：假设 ![一、基本知识 - 图18](https://static.sitestack.cn/projects/huaxiaozhuan-ai/1a363a8db5137e67c6a1a2cb00bab2ac.svg)，则有：![一、基本知识 - 图19](https://static.sitestack.cn/projects/huaxiaozhuan-ai/097bcb56b62f97a0b7f9c652654d3ce4.svg) 。
-    - 结合律：![一、基本知识 - 图20](https://static.sitestack.cn/projects/huaxiaozhuan-ai/af2f15c390ed59f8e9c72c5a22b08f39.svg) 。
+### 6，人事：
 
-## 二、向量操作
+包括主数据、业务流程（招聘、考核、培训、离职、薪酬）、报表，每个业务流程提供表单、流程（基于BPMN2.0标识规范）、规则（基于DMN1.1规范）、报表规范示例，
 
-1. 一组向量 ![二、向量操作 - 图1](https://static.sitestack.cn/projects/huaxiaozhuan-ai/38cedf88a8ce1550c321c940754d6eaf.svg) 是线性相关的：指存在一组不全为零的实数 ![二、向量操作 - 图2](https://static.sitestack.cn/projects/huaxiaozhuan-ai/c4e2e6d9fa327d8e0c1231b0f8108d9a.svg)，使得： ![二、向量操作 - 图3](https://static.sitestack.cn/projects/huaxiaozhuan-ai/f93fce5714a7a56048285d0e7f652613.svg) 。
-    
-    一组向量 ![二、向量操作 - 图4](https://static.sitestack.cn/projects/huaxiaozhuan-ai/38cedf88a8ce1550c321c940754d6eaf.svg) 是线性无关的，当且仅当 ![二、向量操作 - 图5](https://static.sitestack.cn/projects/huaxiaozhuan-ai/969eca3559080831f6ce892ac333854f.svg) 时，才有：![二、向量操作 - 图6](https://static.sitestack.cn/projects/huaxiaozhuan-ai/f93fce5714a7a56048285d0e7f652613.svg) 。
-    
-2. 一个向量空间所包含的最大线性无关向量的数目，称作该向量空间的维数。
-    
-3. 三维向量的点积：![二、向量操作 - 图7](https://static.sitestack.cn/projects/huaxiaozhuan-ai/8fda2e098f817ca34604bc7385d185d4.svg) 。
+### 7，法务：
 
+包括主数据、业务流程（合同、知产、法律事务、印章证照）、报表，每个业务流程提供表单、流程（基于BPMN2.0标识规范）、规则（基于DMN1.1规范）、报表规范示例，
 
+## 三、规范链接
 
+### 1，字段与表单链接（待更新）：
+
+- 微信公众号：精简ERP设计规范
+- bilibili链接：RESS官方频道
+
+- Git链接：[https://github.com/ZQ8826/RESS](https://github.com/ZQ8826/RESS)
+- 知乎链接：[https://zhuanlan.zhihu.com/p/1929234198847288431](https://zhuanlan.zhihu.com/p/1929234198847288431)
+- 飞书多维表格分享链接：[https://yapnctsmti.feishu.cn/base/E37XbhYNAapy1NsfDtwceA1znAb?from=from_copylink](https://yapnctsmti.feishu.cn/base/E37XbhYNAapy1NsfDtwceA1znAb?from=from_copylink)
+- 钉钉多维表格分享链接：[https://alidocs.dingtalk.com/i/nodes/MNDoBb60VLRxKrGwcr5ElnBZ8lemrZQ3?utm_scene=person_space](https://alidocs.dingtalk.com/i/nodes/MNDoBb60VLRxKrGwcr5ElnBZ8lemrZQ3?utm_scene=person_space)
+
+### 2，流程与原型链接（待更新）：
+
+蓝湖链接：待更新
+阿里云盘：待更新
+百度云盘：待更新
+
+## 四、  作者简介
+
+### 1，个人简介
+
+1. 12年4家上市公司ERP自研和SAP实施经验，AI与供应链数字化项目经验丰富
+2. 多项AI发明专利与落地应用（AI派单/AI质检/智能推荐），优化用户服务时效、质量与个性化体验
+3. 掌握多种业务系统（SAP、IBM_Tririga、物流T/W/O、HCM、OA）及低代码平台设计能力（流程/规则/表单/事件+元数据）
+4. PMP 5A认证 | Axure高保真原型 | TCP/IP/HTTP协议 | MySQL | Python
+
+### 2，专利获奖：
+1. 《基于 WaveNet 的工单派发方法、装置及相关介质》发明专利，第一发明人
+2. 《一种基于五维检测模型的工单自动验收方法》发明专利，第一发明人
+3. 《一种工单任务的拆解与分配方法、装置及其相关介质》发明专利，署名
+4. 《Multimodal Understanding and Personalized Dispatching for Property Service Orders via Pre-training based Fusion》论文，署名
+5. 获奖：“鼎新杯”数字化转型应用大赛、BG执行官特别奖等
