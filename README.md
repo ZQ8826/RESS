@@ -52,7 +52,7 @@
 - 飞书多维表格分享链接：[https://yapnctsmti.feishu.cn/base/E37XbhYNAapy1NsfDtwceA1znAb?from=from_copylink](https://yapnctsmti.feishu.cn/base/E37XbhYNAapy1NsfDtwceA1znAb?from=from_copylink)
 - 钉钉多维表格分享链接：[https://alidocs.dingtalk.com/i/nodes/MNDoBb60VLRxKrGwcr5ElnBZ8lemrZQ3?utm_scene=person_space](https://alidocs.dingtalk.com/i/nodes/MNDoBb60VLRxKrGwcr5ElnBZ8lemrZQ3?utm_scene=person_space)
 
-### 2，流程与原型链接（待更新）：
+### 2，流程与原型链接（待更新）：
 
 蓝湖链接：待更新
 阿里云盘：待更新
