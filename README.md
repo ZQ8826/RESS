@@ -62,14 +62,14 @@
 
 ### 1，个人简介
 
-1. 12年4家上市公司ERP自研和SAP实施经验，AI与供应链数字化项目经验丰富
-2. 多项AI发明专利与落地应用（AI派单/AI质检/智能推荐），优化用户服务时效、质量与个性化体验
-3. 掌握多种业务系统（SAP、IBM_Tririga、物流T/W/O、HCM、OA）及低代码平台设计能力（流程/规则/表单/事件+元数据）
-4. PMP 5A认证 | Axure高保真原型 | TCP/IP/HTTP协议 | MySQL | Python
+- 12年4家上市公司ERP自研和SAP实施经验，AI与供应链数字化项目经验丰富
+- 多项AI发明专利与落地应用（AI派单/AI质检/智能推荐），优化用户服务时效、质量与个性化体验
+- 掌握多种业务系统（SAP、IBM_Tririga、物流T/W/O、HCM、OA）及低代码平台设计能力（流程/规则/表单/事件+元数据）
+- PMP 5A认证 | Axure高保真原型 | TCP/IP/HTTP协议 | MySQL | Python
 
 ### 2，专利获奖：
-1. 《基于 WaveNet 的工单派发方法、装置及相关介质》发明专利，第一发明人
-2. 《一种基于五维检测模型的工单自动验收方法》发明专利，第一发明人
-3. 《一种工单任务的拆解与分配方法、装置及其相关介质》发明专利，署名
-4. 《Multimodal Understanding and Personalized Dispatching for Property Service Orders via Pre-training based Fusion》论文，署名
-5. 获奖：“鼎新杯”数字化转型应用大赛、BG执行官特别奖等
+- 《基于 WaveNet 的工单派发方法、装置及相关介质》发明专利，第一发明人
+- 《一种基于五维检测模型的工单自动验收方法》发明专利，第一发明人
+- 《一种工单任务的拆解与分配方法、装置及其相关介质》发明专利，署名
+- 《Multimodal Understanding and Personalized Dispatching for Property Service Orders via Pre-training based Fusion》论文，署名
+- 获奖：“鼎新杯”数字化转型应用大赛、BG执行官特别奖等
